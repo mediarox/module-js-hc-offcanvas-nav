@@ -3,7 +3,7 @@
     "description": "Magento 2 Module for HC Off-canvas Nav",
     "homepage": "https://somewebmedia.github.io/hc-offcanvas-nav/",
     "type": "magento2-module",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "license": "MIT",
     "autoload": {
         "files": [
