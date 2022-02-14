@@ -1,0 +1,16 @@
+{
+    "name": "mediarox/module-js-hc-offcanvas-nav",
+    "description": "Magento 2 Module for HC Off-canvas Nav",
+    "homepage": "https://somewebmedia.github.io/hc-offcanvas-nav/",
+    "type": "magento2-module",
+    "version": "0.0.4",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "JsLib\\HcOffcanvasNav\\": ""
+        }
+    }
+}
