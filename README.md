@@ -22,12 +22,18 @@ bin/magento setup:upgrade
         'jquery',
         'hcOffcanvasNav'
     ], function ($, hcOffcanvasNav) {
-        $('#mobile-nav').hcOffcanvasNav({
+        // create global instance. info: the call as jQuery plugin ($(selector).hcOffcanvasNav) does not work reliably.
+        window.topMenuNavigation = new hcOffcanvasNav('nav.navigation', {
             disableAt: 768,
-            customToggle: $('.toggle'),
-            navTitle: '<?= $escaper->escapeHtml(__('Back')) ?>',
+            labelBack: '<?= $escaper->escapeHtml(__('Back')) ?>',
+            width: '100%',
             levelTitles: true,
             levelTitleAsBack: true
+        });
+        // handle magento mobile nav trigger click. (the "customToggle" option causes collisions in the design.)   
+        $('[data-action="toggle-nav"]').on('click', function(event) {
+            event.preventDefault();
+            window.topMenuNavigation.open();
         });
     });
 </script>
